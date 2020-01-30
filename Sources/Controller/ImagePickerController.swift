@@ -38,6 +38,7 @@ public class ImagePickerController: UINavigationController {
     var onDeselection: ((_ asset: PHAsset) -> Void)?
     var onCancel: ((_ assets: [PHAsset]) -> Void)?
     var onFinish: ((_ assets: [PHAsset]) -> Void)?
+    var onSelectLimitReached: ((_ count: Int) -> Void)?
     
     let assetsViewController = AssetsViewController()
     let albumsViewController = AlbumsViewController()

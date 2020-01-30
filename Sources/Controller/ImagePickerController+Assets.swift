@@ -46,6 +46,12 @@ extension ImagePickerController: AssetsViewControllerDelegate {
     }
 
     func shouldSelect(in assetsViewController: AssetsViewController) -> Bool {
-        return assetStore.count < settings.selection.max
+        
+        if assetStore.count < settings.selection.max {
+            return true
+        } else {
+            imagePickerDelegate?.imagePicker(self, didReachSelectionLimit: assetStore.count)
+            return false
+        }
     }
 }
